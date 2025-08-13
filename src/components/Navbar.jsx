@@ -1,6 +1,6 @@
 import { navLinks } from '../../constants/index.js'
 import gsap from 'gsap'
-import { useGSAP} from "@gsap/react";
+import { useGSAP } from "@gsap/react";
 
 const Navbar = () => {
     useGSAP(() => {
@@ -29,7 +29,7 @@ const Navbar = () => {
 
                 <ul>
                     {navLinks.map((link) => (
-                        <li key={ link.id } className="flex items-center gap-2">
+                        <li key={ link.id }>
                             <a href={`#${ link.id }`}>{ link.title }</a>
                         </li>
                     ))}
