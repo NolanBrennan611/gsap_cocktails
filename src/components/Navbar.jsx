@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 const Navbar = () => {
     useGSAP(() => {
         const navTween = gsap.timeline({
-            scrollBehavior: {
+            scrollTrigger: {
                 trigger: 'nav',
                 start: 'bottom top'
             }
