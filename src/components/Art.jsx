@@ -13,7 +13,7 @@ const Art = () => {
                 trigger: '#art',
                 start,
                 end: 'bottom center',
-                scrub: 0.5,
+                scrub: 1.5,
                 pin: true
             }
         });
