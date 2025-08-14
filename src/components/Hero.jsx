@@ -2,15 +2,15 @@ import gsap from "gsap";
 import {useGSAP} from "@gsap/react";
 import {SplitText} from "gsap/all";
 import {useRef} from "react";
-import { useMediaQuery } from "react-responsive";
+import {useMediaQuery} from "react-responsive";
 
 const Hero = () => {
     const videoRef = useRef();
-    const isMobile = useMediaQuery({ maxWidth: 767 });
+    const isMobile = useMediaQuery({maxWidth: 767});
 
     useGSAP(() => {
-        const heroSplit = new SplitText('.title', { type: 'chars, words' });
-        const paragraphSplit = new SplitText('.subtitle', { type: 'lines' });
+        const heroSplit = new SplitText('.title', {type: 'chars, words'});
+        const paragraphSplit = new SplitText('.subtitle', {type: 'lines'});
 
         // Add silver gradient to chars
         heroSplit.chars.forEach((char) => char.classList.add('text-gradient'))
@@ -39,8 +39,8 @@ const Hero = () => {
                 scrub: true,
             }
         })
-            .to('.right-leaf', { y: 200 }, 0)
-            .to('.left-leaf', { y: -200 }, 0)
+            .to('.right-leaf', {y: 200}, 0)
+            .to('.left-leaf', {y: -200}, 0)
 
         //top 50% would mean when the top of the video is 50% down the screen, start playing
         //120% top means 120% past top of screen
@@ -79,7 +79,8 @@ const Hero = () => {
                         </div>
                         <div className="view-cocktails">
                             <p className="subtitle">
-                                Every cocktail on our menu is a blend of premium ingredients, creative flair, and timeless recipes — designed to delight your senses.
+                                Every cocktail on our menu is a blend of premium ingredients, creative flair, and
+                                timeless recipes — designed to delight your senses.
                             </p>
                             <a href="#cocktails">View Cocktails</a>
                         </div>

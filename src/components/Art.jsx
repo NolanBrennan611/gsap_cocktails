@@ -4,7 +4,7 @@ import {useMediaQuery} from "react-responsive";
 import {useGSAP} from "@gsap/react";
 
 const Art = () => {
-    const isMobile = useMediaQuery({ maxWidth: 767 });
+    const isMobile = useMediaQuery({maxWidth: 767});
 
     useGSAP(() => {
         const start = isMobile ? 'top 20%' : 'top top';
@@ -45,7 +45,7 @@ const Art = () => {
                         {goodLists.map((feature, index) => (
                             <li key={index} className="flex items-center gap-2">
                                 <img src="/images/check.png" alt="check" />
-                                <p>{ feature }</p>
+                                <p>{feature}</p>
                             </li>
                         ))}
                     </ul>
@@ -60,7 +60,7 @@ const Art = () => {
                         {featureLists.map((feature, index) => (
                             <li key={index} className="flex items-center justify-start gap-2">
                                 <img src="/images/check.png" alt="check" />
-                                <p className="md:w-fit w-60">{ feature }</p>
+                                <p className="md:w-fit w-60">{feature}</p>
                             </li>
                         ))}
                     </ul>

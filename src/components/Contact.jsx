@@ -1,11 +1,12 @@
-import { openingHours, socials } from '../../constants/index.js'
-import { useGSAP } from '@gsap/react'
-import { SplitText} from 'gsap/all';
+import {openingHours, socials} from '../../constants/index.js'
+import {useGSAP} from '@gsap/react'
+import {SplitText} from 'gsap/all';
 import gsap from 'gsap';
 
 const Contact = () => {
+
     useGSAP(() => {
-        const titleSplit = SplitText.create('#contact h2', { type: 'words' });
+        const titleSplit = SplitText.create('#contact h2', {type: 'words'});
 
         const timeline = gsap.timeline({
             scrollTrigger: {

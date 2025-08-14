@@ -1,8 +1,8 @@
 'use client';
 
-import { allCocktails } from '../../constants/index.js'
-import { useRef, useState } from 'react'
-import { useGSAP } from '@gsap/react'
+import {allCocktails} from '../../constants/index.js'
+import {useRef, useState} from 'react'
+import {useGSAP} from '@gsap/react'
 import gsap from 'gsap';
 
 const Menu = () => {
@@ -12,33 +12,33 @@ const Menu = () => {
     const [direction, setDirection] = useState(null); // Track animation direction
 
     useGSAP(() => {
-        gsap.fromTo('#title', { opacity: 0 }, { opacity: 1, duration: 1 });
+        gsap.fromTo('#title', {opacity: 0}, {opacity: 1, duration: 1});
 
         // Animate cocktail image based on direction
         if (direction === 'next') {
             // Coming from right (next cocktail)
             gsap.fromTo('.cocktail img',
-                { opacity: 0, xPercent: 100 },
-                { xPercent: 0, opacity: 1, duration: 1, ease: 'power2.out' }
+                {opacity: 0, xPercent: 100},
+                {xPercent: 0, opacity: 1, duration: 1, ease: 'power2.out'}
             );
         } else if (direction === 'prev') {
             // Coming from left (previous cocktail)
             gsap.fromTo('.cocktail img',
-                { opacity: 0, xPercent: -100 },
-                { xPercent: 0, opacity: 1, duration: 1, ease: 'power2.out' }
+                {opacity: 0, xPercent: -100},
+                {xPercent: 0, opacity: 1, duration: 1, ease: 'power2.out'}
             );
         } else {
             // Initial load or direct tab click - default animation
             gsap.fromTo('.cocktail img',
-                { opacity: 0, scale: 0.8 },
-                { scale: 1, opacity: 1, duration: 1, ease: 'power2.out' }
+                {opacity: 0, scale: 0.8},
+                {scale: 1, opacity: 1, duration: 1, ease: 'power2.out'}
             );
         }
 
-        gsap.fromTo('.details h2', { yPercent: 100, opacity: 0 }, {
+        gsap.fromTo('.details h2', {yPercent: 100, opacity: 0}, {
             yPercent: 0, opacity: 100, ease: 'power1.inOut', delay: 0.2
         });
-        gsap.fromTo('.details p', { yPercent: 100, opacity: 0 }, {
+        gsap.fromTo('.details p', {yPercent: 100, opacity: 0}, {
             yPercent: 0, opacity: 100, ease: 'power1.inOut', delay: 0.3
         });
     }, [currentIndex, direction]);
